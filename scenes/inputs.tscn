@@ -1,0 +1,213 @@
+[gd_scene load_steps=15 format=3 uid="uid://dwp5kk6t3mxm5"]
+
+[ext_resource type="Script" path="res://script/input.gd" id="2_thcg8"]
+[ext_resource type="Texture2D" uid="uid://k6kmg2bvix6m" path="res://art/icon.svg" id="2_y2sgw"]
+[ext_resource type="Texture2D" uid="uid://b0cs33qt538ml" path="res://art/face-normal.svg" id="3_oetpa"]
+[ext_resource type="Texture2D" uid="uid://h72lfkq7jid1" path="res://art/face-pressed1.svg" id="4_4238c"]
+[ext_resource type="Texture2D" uid="uid://bmkobal4kfgxf" path="res://art/face-pressed2.svg" id="5_isap7"]
+[ext_resource type="Texture2D" uid="uid://c51tyowu1tft4" path="res://art/face-startSelect-default.svg" id="8_r41so"]
+[ext_resource type="Texture2D" uid="uid://cgrprsu1xhu43" path="res://art/face-startSelect-pressed.svg" id="9_u7bhj"]
+[ext_resource type="Texture2D" uid="uid://bq55l860dqilr" path="res://art/stick_outerRing.svg" id="12_kd4h0"]
+[ext_resource type="Texture2D" uid="uid://t0tjebp0bkhw" path="res://art/shoulder-normal.svg" id="12_odlve"]
+[ext_resource type="Texture2D" uid="uid://dwfpcsrxot6cb" path="res://art/shoulder-pressed.svg" id="13_2cg37"]
+[ext_resource type="Texture2D" uid="uid://yycnsbw8tekr" path="res://art/stick.svg" id="13_kf63h"]
+[ext_resource type="Texture2D" uid="uid://ccx2u1nbub4db" path="res://art/stick_button.svg" id="14_syd4m"]
+[ext_resource type="Texture2D" uid="uid://55qp4q42b4ty" path="res://art/dPad-normal.svg" id="15_x3foe"]
+[ext_resource type="Texture2D" uid="uid://cj4kcgusi232s" path="res://art/dPad-pressed.svg" id="16_2hk6s"]
+
+[node name="inputs" type="Node2D"]
+script = ExtResource("2_thcg8")
+metadata/_edit_vertical_guides_ = []
+
+[node name="Sprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_y2sgw")
+
+[node name="face" type="Node2D" parent="."]
+position = Vector2(927, 336)
+
+[node name="face-normal" type="Sprite2D" parent="face"]
+position = Vector2(0, 0.5)
+texture = ExtResource("3_oetpa")
+
+[node name="face-pressed-up" type="Sprite2D" parent="face"]
+position = Vector2(0, -58)
+scale = Vector2(0.868, 0.868)
+texture = ExtResource("4_4238c")
+
+[node name="face-pressed-right" type="Sprite2D" parent="face"]
+position = Vector2(66, 0)
+scale = Vector2(0.868, 0.868)
+texture = ExtResource("5_isap7")
+
+[node name="face-pressed-down" type="Sprite2D" parent="face"]
+position = Vector2(0, 59)
+scale = Vector2(0.868, 0.868)
+texture = ExtResource("5_isap7")
+
+[node name="face-pressed-left" type="Sprite2D" parent="face"]
+position = Vector2(-66, 0)
+scale = Vector2(0.868114, 0.868114)
+texture = ExtResource("4_4238c")
+
+[node name="face-start" type="Sprite2D" parent="face"]
+position = Vector2(-183, -64)
+texture = ExtResource("8_r41so")
+
+[node name="pressed" type="Sprite2D" parent="face/face-start"]
+position = Vector2(-1.52588e-05, -7.62939e-06)
+scale = Vector2(0.938931, 0.8)
+texture = ExtResource("9_u7bhj")
+
+[node name="select" type="Sprite2D" parent="face"]
+position = Vector2(-391, -64)
+texture = ExtResource("8_r41so")
+
+[node name="pressed" type="Sprite2D" parent="face/select"]
+position = Vector2(-1.52588e-05, -7.62939e-06)
+scale = Vector2(0.938931, 0.8)
+texture = ExtResource("9_u7bhj")
+
+[node name="guide" type="Sprite2D" parent="face"]
+position = Vector2(-287, 0)
+scale = Vector2(0.364407, 0.374936)
+texture = ExtResource("13_kf63h")
+
+[node name="pressed" type="Sprite2D" parent="face/guide"]
+position = Vector2(-6.10352e-05, 0)
+scale = Vector2(1.75152, 1.75152)
+texture = ExtResource("14_syd4m")
+
+[node name="face-misc" type="Sprite2D" parent="face"]
+visible = false
+position = Vector2(-287, 303)
+texture = ExtResource("2_y2sgw")
+
+[node name="shoulder" type="Node2D" parent="."]
+position = Vector2(640, 160)
+
+[node name="shoulder-left" type="Sprite2D" parent="shoulder"]
+position = Vector2(-296, 0)
+texture = ExtResource("12_odlve")
+metadata/_edit_group_ = true
+
+[node name="pressed" type="Sprite2D" parent="shoulder/shoulder-left"]
+position = Vector2(-5.72205e-06, -1.5)
+scale = Vector2(0.964706, 0.864407)
+texture = ExtResource("13_2cg37")
+
+[node name="shoulder-right" type="Sprite2D" parent="shoulder"]
+position = Vector2(296, 0)
+scale = Vector2(-1, 1)
+texture = ExtResource("12_odlve")
+metadata/_edit_group_ = true
+
+[node name="pressed" type="Sprite2D" parent="shoulder/shoulder-right"]
+position = Vector2(-5.72205e-06, -1.5)
+scale = Vector2(0.964706, 0.864407)
+texture = ExtResource("13_2cg37")
+
+[node name="trigger" type="Node" parent="."]
+
+[node name="left" type="ColorRect" parent="trigger"]
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 168.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_group_ = true
+
+[node name="bar" type="ColorRect" parent="trigger/left"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 504.0
+offset_right = 56.0
+offset_bottom = 1000.0
+rotation = 3.14159
+
+[node name="right" type="ColorRect" parent="trigger"]
+offset_left = 1112.0
+offset_top = 128.0
+offset_right = 1152.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_group_ = true
+
+[node name="bar" type="ColorRect" parent="trigger/right"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 504.0
+offset_right = 56.0
+offset_bottom = 1000.0
+rotation = 3.14159
+
+[node name="analog" type="Node" parent="."]
+
+[node name="leftAnalog" type="Sprite2D" parent="analog"]
+position = Vector2(471, 544)
+scale = Vector2(0.75, 0.75)
+metadata/_edit_group_ = true
+
+[node name="outerRing" type="Sprite2D" parent="analog/leftAnalog"]
+texture = ExtResource("12_kd4h0")
+
+[node name="stick" type="Sprite2D" parent="analog/leftAnalog"]
+texture = ExtResource("13_kf63h")
+
+[node name="button" type="Sprite2D" parent="analog/leftAnalog/stick"]
+texture = ExtResource("14_syd4m")
+
+[node name="rightAnalog" type="Sprite2D" parent="analog"]
+position = Vector2(810, 544)
+scale = Vector2(0.75, 0.75)
+metadata/_edit_group_ = true
+
+[node name="outerRing" type="Sprite2D" parent="analog/rightAnalog"]
+texture = ExtResource("12_kd4h0")
+
+[node name="stick" type="Sprite2D" parent="analog/rightAnalog"]
+texture = ExtResource("13_kf63h")
+
+[node name="button" type="Sprite2D" parent="analog/rightAnalog/stick"]
+texture = ExtResource("14_syd4m")
+
+[node name="paddle" type="Node2D" parent="."]
+visible = false
+position = Vector2(80, 352)
+
+[node name="paddle1" type="Sprite2D" parent="paddle"]
+position = Vector2(144, 272)
+texture = ExtResource("2_y2sgw")
+
+[node name="paddle2" type="Sprite2D" parent="paddle"]
+position = Vector2(984, 272)
+texture = ExtResource("2_y2sgw")
+
+[node name="dpad" type="Node2D" parent="."]
+position = Vector2(353, 336)
+metadata/_edit_group_ = true
+
+[node name="dpad-normal" type="Sprite2D" parent="dpad"]
+texture = ExtResource("15_x3foe")
+
+[node name="dUp" type="Sprite2D" parent="dpad"]
+position = Vector2(0, -57)
+scale = Vector2(0.892, 0.88)
+texture = ExtResource("16_2hk6s")
+
+[node name="dDown" type="Sprite2D" parent="dpad"]
+position = Vector2(0, 57)
+scale = Vector2(0.892308, 0.88)
+texture = ExtResource("16_2hk6s")
+
+[node name="dLeft" type="Sprite2D" parent="dpad"]
+position = Vector2(-57, 0)
+rotation = 1.5708
+scale = Vector2(0.892, 0.88)
+texture = ExtResource("16_2hk6s")
+
+[node name="dRight" type="Sprite2D" parent="dpad"]
+position = Vector2(57, 0)
+rotation = 1.5708
+scale = Vector2(0.88, 0.88)
+texture = ExtResource("16_2hk6s")

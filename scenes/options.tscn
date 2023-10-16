@@ -1,0 +1,107 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx37iqbakviwb"]
+
+[ext_resource type="Script" path="res://script/options.gd" id="1_gsuww"]
+[ext_resource type="Texture2D" uid="uid://k6kmg2bvix6m" path="res://art/icon.svg" id="2_0vrh0"]
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gsuww")
+
+[node name="Resolution" type="OptionButton" parent="."]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 31.0
+item_count = 5
+selected = 0
+popup/item_0/text = "Resolution"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_0/separator = true
+popup/item_1/text = "1280x720"
+popup/item_1/id = 1
+popup/item_2/text = "1920x1080"
+popup/item_2/id = 2
+popup/item_3/text = "2560x1440"
+popup/item_3/id = 3
+popup/item_4/text = "3840x2160"
+popup/item_4/id = 4
+
+[node name="Chroma" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_right = 272.0
+offset_bottom = 31.0
+item_count = 4
+selected = 0
+popup/item_0/text = "Chroma"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_0/separator = true
+popup/item_1/text = "None"
+popup/item_1/id = 1
+popup/item_2/text = "Blue"
+popup/item_2/id = 2
+popup/item_3/text = "Green"
+popup/item_3/id = 3
+
+[node name="MenuButton" type="MenuButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1216.0
+offset_right = 1352.0
+offset_bottom = 136.0
+scale = Vector2(0.47, 0.47)
+icon = ExtResource("2_0vrh0")
+item_count = 4
+popup/item_0/text = "Resolutions"
+popup/item_0/id = 0
+popup/item_1/text = "Chroma"
+popup/item_1/id = 1
+popup/item_2/text = "Raw inputs"
+popup/item_2/checkable = 1
+popup/item_2/id = 2
+popup/item_3/text = "Logs"
+popup/item_3/checkable = 1
+popup/item_3/id = 3
+
+[node name="MenuBar" type="MenuBar" parent="MenuButton"]
+visible = false
+layout_mode = 0
+offset_left = -216.0
+offset_top = 8.0
+offset_right = -176.0
+offset_bottom = 48.0
+start_index = 0
+
+[node name="RawInputs" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_right = 424.0
+offset_bottom = 31.0
+color = Color(0.180392, 0.180392, 0.180392, 1)
+metadata/_edit_group_ = true
+
+[node name="Button" type="CheckButton" parent="RawInputs"]
+layout_mode = 0
+offset_right = 136.0
+offset_bottom = 31.0
+text = "Raw inputs"
+
+[node name="Logs" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_right = 528.0
+offset_bottom = 31.0
+color = Color(0.180392, 0.180392, 0.180392, 1)
+metadata/_edit_group_ = true
+
+[node name="Button" type="CheckButton" parent="Logs"]
+layout_mode = 0
+offset_right = 88.0
+offset_bottom = 31.0
+text = "Logs"
