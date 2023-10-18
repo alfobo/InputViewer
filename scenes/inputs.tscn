@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dwp5kk6t3mxm5"]
+[gd_scene load_steps=16 format=3 uid="uid://dwp5kk6t3mxm5"]
 
 [ext_resource type="Script" path="res://script/input.gd" id="2_thcg8"]
 [ext_resource type="Texture2D" uid="uid://k6kmg2bvix6m" path="res://art/icon.svg" id="2_y2sgw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bmkobal4kfgxf" path="res://art/face-pressed2.svg" id="5_isap7"]
 [ext_resource type="Texture2D" uid="uid://c51tyowu1tft4" path="res://art/face-startSelect-default.svg" id="8_r41so"]
 [ext_resource type="Texture2D" uid="uid://cgrprsu1xhu43" path="res://art/face-startSelect-pressed.svg" id="9_u7bhj"]
+[ext_resource type="Script" path="res://scenes/trigger.gd" id="12_1r41w"]
 [ext_resource type="Texture2D" uid="uid://bq55l860dqilr" path="res://art/stick_outerRing.svg" id="12_kd4h0"]
 [ext_resource type="Texture2D" uid="uid://t0tjebp0bkhw" path="res://art/shoulder-normal.svg" id="12_odlve"]
 [ext_resource type="Texture2D" uid="uid://dwfpcsrxot6cb" path="res://art/shoulder-pressed.svg" id="13_2cg37"]
@@ -18,6 +19,7 @@
 [node name="inputs" type="Node2D"]
 script = ExtResource("2_thcg8")
 metadata/_edit_vertical_guides_ = []
+metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 visible = false
@@ -108,6 +110,7 @@ scale = Vector2(0.964706, 0.864407)
 texture = ExtResource("13_2cg37")
 
 [node name="trigger" type="Node" parent="."]
+script = ExtResource("12_1r41w")
 
 [node name="left" type="ColorRect" parent="trigger"]
 offset_left = 128.0

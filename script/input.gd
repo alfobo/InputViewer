@@ -5,7 +5,6 @@ var a = []
 var bID
 var b = []
 #TODO:
-#	get get_joy_guid from a seperate function
 #	try and change the if statements for the triggers to match case
 #	Maybe break up the input logics so that they're in their own script
 	
@@ -163,13 +162,13 @@ func controllerInputs():
 		else:
 			$analog/rightAnalog/stick.position = Vector2()
 			
-		if(Input.get_joy_axis(0,a[4])):
-			print("Left trig: ",Input.get_joy_axis(0,a[4]))
-			$"trigger/left/bar".scale.y = Input.get_joy_axis(0,a[4])
-		else:
-			$"trigger/left/bar".scale.y = 0
-		if(Input.get_joy_axis(0,a[5])):
-			print("Right trig: ",Input.get_joy_axis(0,a[5]))
-			$"trigger/right/bar".scale.y = Input.get_joy_axis(0,a[5])
-		else:
-			$"trigger/right/bar".scale.y = 0
+#		if(Input.get_joy_axis(0,a[4])):
+#			print("Left trig: ",Input.get_joy_axis(0,a[4]))
+#			$"trigger/left/bar".scale.y = Input.get_joy_axis(0,a[4])
+#		else:
+#			$"trigger/left/bar".scale.y = 0
+#		if(Input.get_joy_axis(0,a[5])):
+#			print("Right trig: ",Input.get_joy_axis(0,a[5]))
+#			$"trigger/right/bar".scale.y = Input.get_joy_axis(0,a[5])
+#		else:
+#			$"trigger/right/bar".scale.y = 0
