@@ -4,9 +4,6 @@ var aID
 var a = []
 var bID
 var b = []
-#TODO:
-#	try and change the if statements for the triggers to match case
-#	Maybe break up the input logics so that they're in their own script
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,21 +30,13 @@ func _ready():
 			"R_SHLD","U_DPAD","D_DPAD","L_DPAD",
 			"R_DPAD","MISC1"
 			]
-			
-		for i in 10:
-			a.append(i)
-		aID = [
-			"LX_AXIS","LY_AXIS","RX_AXIS","RY_AXIS",
-			"L_TRIG","R_TRIG"
-			]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 #func _physics_process(delta):
 	#pressTime()
 	controllerInputs()
-	
-	
+		
 func pressTime():
 	#match Input.is_joy_button_pressed(0,JOY_BUTTON_A):
 	print(Input.is_joy_button_pressed(0,JOY_BUTTON_A))
@@ -149,26 +138,4 @@ func controllerInputs():
 				14:
 					$dpad/dRight.visible = false
 					
-	for i in range(a.size()):
-		if(Input.get_joy_axis(0,a[0]) || Input.get_joy_axis(0,a[1])):
-			print("Left joy: ",Input.get_joy_axis(0,a[0]),", ",Input.get_joy_axis(0,a[1]))
-			$analog/leftAnalog/stick.position = 40*Vector2(Input.get_joy_axis(0,a[0]),Input.get_joy_axis(0,a[1]))
-		else:
-			$analog/leftAnalog/stick.position = Vector2()
-			
-		if(Input.get_joy_axis(0,a[2]) || Input.get_joy_axis(0,a[3])):
-			print("Right joy: ",Input.get_joy_axis(0,a[2]),", ",Input.get_joy_axis(0,a[3]))
-			$analog/rightAnalog/stick.position = 40*Vector2(Input.get_joy_axis(0,a[2]),Input.get_joy_axis(0,a[3]))
-		else:
-			$analog/rightAnalog/stick.position = Vector2()
-			
-#		if(Input.get_joy_axis(0,a[4])):
-#			print("Left trig: ",Input.get_joy_axis(0,a[4]))
-#			$"trigger/left/bar".scale.y = Input.get_joy_axis(0,a[4])
-#		else:
-#			$"trigger/left/bar".scale.y = 0
-#		if(Input.get_joy_axis(0,a[5])):
-#			print("Right trig: ",Input.get_joy_axis(0,a[5]))
-#			$"trigger/right/bar".scale.y = Input.get_joy_axis(0,a[5])
-#		else:
-#			$"trigger/right/bar".scale.y = 0
+

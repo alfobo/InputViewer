@@ -9,11 +9,11 @@ func _ready():
 func _physics_process(delta):
 	if(Input.get_joy_axis(0,4)):
 		print("Left trig: ",Input.get_joy_axis(0,4))
-		$"left/bar".scale.y = Input.get_joy_axis(0,4)
+		$left/bar.scale.y = Input.get_joy_axis(0,4)
 	else:
-		$"left/bar".scale.y = 0
+		$left/bar.scale.y = 0
 	if(Input.get_joy_axis(0,5)): 
 		print("Right trig: ",Input.get_joy_axis(0,5))
-		$"right/bar".scale.y = Input.get_joy_axis(0,5)
+		$right/bar.scale.y = Input.get_joy_axis(0,5)
 	else:
-		$"right/bar".scale.y = 0
+		$right/bar.scale.y = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwp5kk6t3mxm5"]
+[gd_scene load_steps=17 format=3 uid="uid://dwp5kk6t3mxm5"]
 
 [ext_resource type="Script" path="res://script/input.gd" id="2_thcg8"]
 [ext_resource type="Texture2D" uid="uid://k6kmg2bvix6m" path="res://art/icon.svg" id="2_y2sgw"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://t0tjebp0bkhw" path="res://art/shoulder-normal.svg" id="12_odlve"]
 [ext_resource type="Texture2D" uid="uid://dwfpcsrxot6cb" path="res://art/shoulder-pressed.svg" id="13_2cg37"]
 [ext_resource type="Texture2D" uid="uid://yycnsbw8tekr" path="res://art/stick.svg" id="13_kf63h"]
+[ext_resource type="Script" path="res://scenes/analog.gd" id="13_o3eua"]
 [ext_resource type="Texture2D" uid="uid://ccx2u1nbub4db" path="res://art/stick_button.svg" id="14_syd4m"]
 [ext_resource type="Texture2D" uid="uid://55qp4q42b4ty" path="res://art/dPad-normal.svg" id="15_x3foe"]
 [ext_resource type="Texture2D" uid="uid://cj4kcgusi232s" path="res://art/dPad-pressed.svg" id="16_2hk6s"]
@@ -145,6 +146,7 @@ offset_bottom = 1000.0
 rotation = 3.14159
 
 [node name="analog" type="Node" parent="."]
+script = ExtResource("13_o3eua")
 
 [node name="leftAnalog" type="Sprite2D" parent="analog"]
 position = Vector2(471, 544)
