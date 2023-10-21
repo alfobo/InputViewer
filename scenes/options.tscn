@@ -105,3 +105,6 @@ layout_mode = 0
 offset_right = 88.0
 offset_bottom = 31.0
 text = "Logs"
+
+[connection signal="item_selected" from="Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="item_selected" from="Chroma" to="." method="_on_chroma_item_selected"]

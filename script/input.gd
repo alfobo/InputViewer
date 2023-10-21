@@ -19,21 +19,21 @@ func _ready():
 	$dpad/dRight.visible = false
 	
 	print(Input.get_joy_name(0))
-	for i in 21:
-			b.append(i)
+	
 	bID = [
 		"A","B","X","Y","BACK","GUIDE","START",
 		"LBUT_STICK","RBUT_STICK","L_SHLD",
 		"R_SHLD","U_DPAD","D_DPAD","L_DPAD",
 		"R_DPAD","MISC1"
 		]
+	for i in bID.size():
+		b.append(i)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 #func _physics_process(delta):
 	#pressTime()
 	controllerInputs()
-	
 	
 func pressTime():
 	#match Input.is_joy_button_pressed(0,JOY_BUTTON_A):
@@ -47,7 +47,6 @@ func controllerInputs():
 				0:	# A
 					print(bID[i])
 					$"face/face-pressed-down".visible = true
-					#$Sprite.modulate = Color.BLUE #experiment with this instead of using alt sprite
 				1:	# B
 					print(bID[i])
 					$"face/face-pressed-right".visible = true
@@ -135,5 +134,3 @@ func controllerInputs():
 					$dpad/dLeft.visible = false
 				14:
 					$dpad/dRight.visible = false
-					
-
