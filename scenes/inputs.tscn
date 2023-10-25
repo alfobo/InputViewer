@@ -216,20 +216,105 @@ rotation = 1.5708
 scale = Vector2(0.88, 0.88)
 texture = ExtResource("16_2hk6s")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 440.0
-offset_top = 128.0
-offset_right = 552.0
-offset_bottom = 168.0
-
-[node name="Label2" type="Label" parent="."]
-offset_left = 720.0
-offset_top = 128.0
-offset_right = 834.0
-offset_bottom = 168.0
-
 [node name="notice" type="Label" parent="."]
 offset_left = 440.0
 offset_top = 40.0
 offset_right = 480.0
 offset_bottom = 63.0
+
+[node name="watches" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="shoulderLeft" type="Label" parent="watches"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 128.0
+offset_right = 552.0
+offset_bottom = 168.0
+
+[node name="shoulderRight" type="Label" parent="watches"]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 128.0
+offset_right = 834.0
+offset_bottom = 168.0
+
+[node name="faceUp" type="Label" parent="watches"]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 206.0
+offset_right = 976.0
+offset_bottom = 246.0
+
+[node name="faceDown" type="Label" parent="watches"]
+layout_mode = 0
+offset_left = 876.0
+offset_top = 437.0
+offset_right = 988.0
+offset_bottom = 477.0
+
+[node name="faceLeft" type="Label" parent="watches"]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 321.0
+offset_right = 832.0
+offset_bottom = 361.0
+
+[node name="faceRight" type="Label" parent="watches"]
+layout_mode = 0
+offset_left = 981.0
+offset_top = 385.0
+offset_right = 1091.0
+offset_bottom = 411.0
+
+[node name="start" type="Label" parent="watches"]
+layout_mode = 0
+offset_left = 683.0
+offset_top = 216.0
+offset_right = 795.0
+offset_bottom = 256.0
+
+[node name="select" type="Label" parent="watches"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 216.0
+offset_right = 592.0
+offset_bottom = 256.0
+
+[node name="guide" type="Label" parent="watches"]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 385.0
+offset_right = 699.0
+offset_bottom = 425.0
+
+[node name="dUp" type="Label" parent="watches"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 206.0
+offset_right = 412.0
+offset_bottom = 246.0
+
+[node name="dDown" type="Label" parent="watches"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 425.0
+offset_right = 412.0
+offset_bottom = 465.0
+
+[node name="dLeft" type="Label" parent="watches"]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 327.0
+offset_right = 262.0
+offset_bottom = 350.0
+
+[node name="dRight" type="Label" parent="watches"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 321.0
+offset_right = 520.0
+offset_bottom = 347.0

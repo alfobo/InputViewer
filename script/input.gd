@@ -20,6 +20,9 @@ func _ready():
 	$dpad/dLeft.visible = false
 	$dpad/dRight.visible = false
 	
+	for child in $watches.get_children():
+		child.visible = false
+		
 	print(Input.get_joy_name(0))
 	
 	bID = [
@@ -71,12 +74,12 @@ func controllerInputs(delta):
 					$analog/rightAnalog/stick/button.visible = true
 				9:	# Left shoulder
 					timeActive = true
-					pressTime(delta,$Label,9)
+					pressTime(delta,$watches/shoulderLeft,9)
 					print(bID[i])
 					$"shoulder/shoulder-left/pressed".visible = true
 				10:	# Right shoulder
 					timeActive = true
-					pressTime(delta,$Label2,10)
+					pressTime(delta,$watches/shoulderRight,10)
 					print(bID[i])
 					$"shoulder/shoulder-right/pressed".visible = true
 				11:	# Dpad up
@@ -150,15 +153,12 @@ func _on_options_raw_input(state):
 	# TODO: use a for loop
 	match state:
 		true:
-			$Label.visible = true
-			$Label.text = "0.00000"
-			$Label2.visible = true
-			$Label2.text = "0.00000"
+			for child in $watches.get_children():
+				child.visible = true
+				child.text = "0.00000"
 		false:
-			$Label.visible = false
-			$Label.text = "0.00000"
-			$Label2.visible = false
-			$Label2.text = "0.00000"
+			for child in $watches.get_children():
+				child.visible = false
 
 func _on_options_logs(state):
 	match state:
