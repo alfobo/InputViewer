@@ -19,5 +19,5 @@ color = Color(0.301961, 0.301961, 0.301961, 1)
 [node name="options" parent="." instance=ExtResource("2_fnb6u")]
 
 [connection signal="chromaChange" from="options" to="." method="_on_options_chroma_change"]
+[connection signal="inputData" from="options" to="inputs" method="_on_options_input_data"]
 [connection signal="logs" from="options" to="inputs" method="_on_options_logs"]
-[connection signal="rawInput" from="options" to="inputs" method="_on_options_raw_input"]

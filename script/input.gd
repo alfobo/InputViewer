@@ -176,17 +176,6 @@ func pressTimeStop(array):
 	time[array] = 0
 	timeActive = false
 	
-func _on_options_raw_input(state):
-	# TODO: use a for loop
-	match state:
-		true:
-			for child in $watches.get_children():
-				child.visible = true
-				child.text = "0.00000"
-		false:
-			for child in $watches.get_children():
-				child.visible = false
-
 func _on_options_logs(state):
 	match state:
 		true:
@@ -194,3 +183,13 @@ func _on_options_logs(state):
 			$notice.text = "Feature not yet implemented"
 		false:
 			$notice.visible = false
+
+func _on_options_input_data(state):
+	match state:
+		true:
+			for child in $watches.get_children():
+				child.visible = true
+				child.text = "0.00000s"
+		false:
+			for child in $watches.get_children():
+				child.visible = false

@@ -1,7 +1,7 @@
 extends Node
 
 signal chromaChange(chroma)
-signal rawInput(state)
+signal inputData(state)
 signal logs(state)
 
 func resolution(width, height):
@@ -27,7 +27,7 @@ func _on_chroma_item_selected(index):
 			print("index3")
 
 func _on_inputs_toggled(button_pressed):
-	emit_signal("rawInput",button_pressed)
+	emit_signal("inputData",button_pressed)
 
 
 func _on_logs_toggled(button_pressed):

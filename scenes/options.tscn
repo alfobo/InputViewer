@@ -108,7 +108,7 @@ metadata/_edit_group_ = true
 layout_mode = 0
 offset_right = 136.0
 offset_bottom = 31.0
-text = "Raw inputs"
+text = "Input data"
 
 [node name="Logs" type="ColorRect" parent="."]
 layout_mode = 0
