@@ -2,6 +2,8 @@ extends Node
 
 var bID
 var b = []
+var time = []
+var timeActive = false
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,19 +30,15 @@ func _ready():
 		]
 	for i in bID.size():
 		b.append(i)
+		time.append(0.0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 #func _physics_process(delta):
-	#pressTime()
-	controllerInputs()
+	controllerInputs(delta)
 	
-func pressTime():
-	#match Input.is_joy_button_pressed(0,JOY_BUTTON_A):
-	print(Input.is_joy_button_pressed(0,JOY_BUTTON_A))
-
 # Change sprite visibility state depending if a button is pressed or not
-func controllerInputs():
+func controllerInputs(delta):
 	for i in range(b.size()):
 		if (Input.is_joy_button_pressed(0,b[i])):
 			match b[i]:
@@ -72,9 +70,13 @@ func controllerInputs():
 					print(bID[i])
 					$analog/rightAnalog/stick/button.visible = true
 				9:	# Left shoulder
+					timeActive = true
+					pressTime(delta,$Label,9)
 					print(bID[i])
 					$"shoulder/shoulder-left/pressed".visible = true
 				10:	# Right shoulder
+					timeActive = true
+					pressTime(delta,$Label2,10)
 					print(bID[i])
 					$"shoulder/shoulder-right/pressed".visible = true
 				11:	# Dpad up
@@ -102,7 +104,7 @@ func controllerInputs():
 					print(bID[i])
 				19:# Paddle 4
 					print(bID[i])
-		elif(!Input.is_joy_button_pressed(0,b[i])):
+		if(!Input.is_joy_button_pressed(0,b[i])):
 			match b[i]:
 				0:
 					$"face/face-pressed-down".visible = false
@@ -123,8 +125,12 @@ func controllerInputs():
 				8:
 					$analog/rightAnalog/stick/button.visible = false
 				9:
+					time[9] = 0
+					timeActive = false
 					$"shoulder/shoulder-left/pressed".visible = false
 				10:
+					time[10] = 0
+					timeActive = false
 					$"shoulder/shoulder-right/pressed".visible = false
 				11:
 					$dpad/dUp.visible = false
@@ -134,3 +140,30 @@ func controllerInputs():
 					$dpad/dLeft.visible = false
 				14:
 					$dpad/dRight.visible = false
+
+func pressTime(delta,label,array):
+	if (timeActive && label.visible):
+		time[array]+=delta
+		label.text = str(time[array]).pad_decimals(5)+"s"
+
+func _on_options_raw_input(state):
+	# TODO: use a for loop
+	match state:
+		true:
+			$Label.visible = true
+			$Label.text = "0.00000"
+			$Label2.visible = true
+			$Label2.text = "0.00000"
+		false:
+			$Label.visible = false
+			$Label.text = "0.00000"
+			$Label2.visible = false
+			$Label2.text = "0.00000"
+
+func _on_options_logs(state):
+	match state:
+		true:
+			$notice.visible = true
+			$notice.text = "Feature not yet implemented"
+		false:
+			$notice.visible = false

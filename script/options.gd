@@ -2,6 +2,7 @@ extends Node
 
 signal chromaChange(chroma)
 signal rawInput(state)
+signal logs(state)
 
 func resolution(width, height):
 	get_viewport().size = Vector2(width,height)
@@ -25,5 +26,9 @@ func _on_chroma_item_selected(index):
 			emit_signal("chromaChange","green")
 			print("index3")
 
-func _on_button_toggled(button_pressed):
+func _on_inputs_toggled(button_pressed):
 	emit_signal("rawInput",button_pressed)
+
+
+func _on_logs_toggled(button_pressed):
+	emit_signal("logs",button_pressed)
