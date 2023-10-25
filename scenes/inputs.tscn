@@ -318,3 +318,15 @@ offset_left = 440.0
 offset_top = 321.0
 offset_right = 520.0
 offset_bottom = 347.0
+
+[node name="stickLeft" type="Label" parent="watches"]
+offset_left = 412.0
+offset_top = 425.0
+offset_right = 524.0
+offset_bottom = 465.0
+
+[node name="stickRight" type="Label" parent="watches"]
+offset_left = 758.0
+offset_top = 425.0
+offset_right = 870.0
+offset_bottom = 465.0

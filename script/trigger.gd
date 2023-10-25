@@ -5,7 +5,7 @@ func _ready():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _process(delta):
 	# Left trigger
 	if(Input.get_joy_axis(0,4)):
 		print("Left trig: ",Input.get_joy_axis(0,4))
