@@ -4,8 +4,7 @@ var bID
 var b = []
 var time = []
 var timeActive = false
-	
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	$"face/face-pressed-up".visible = false
 	$"face/face-pressed-down".visible = false
@@ -22,6 +21,7 @@ func _ready():
 	
 	for child in $watches.get_children():
 		child.visible = false
+		child.text = "0.00000"
 		
 	print(Input.get_joy_name(0))
 	
@@ -189,7 +189,18 @@ func _on_options_input_data(state):
 		true:
 			for child in $watches.get_children():
 				child.visible = true
-				child.text = "0.00000s"
 		false:
 			for child in $watches.get_children():
 				child.visible = false
+
+func _on_trigger_trigger_data(data):
+	if(data == Input.get_joy_axis(0,4)):
+		$watches/triggerLeft.text = str(Input.get_joy_axis(0,4)).pad_decimals(5)
+	if (data == Input.get_joy_axis(0,5)):
+		$watches/triggerRight.text = str(Input.get_joy_axis(0,5)).pad_decimals(5)
+
+func _on_analog_analog_data(data):
+	if (data == Vector2(Input.get_joy_axis(0,0),Input.get_joy_axis(0,1))):
+		$watches/analogLeft.text = str(Vector2(Input.get_joy_axis(0,0),Input.get_joy_axis(0,1)))
+	if (data == Vector2(Input.get_joy_axis(0,2),Input.get_joy_axis(0,3))):
+		$watches/analogRight.text = str(Vector2(Input.get_joy_axis(0,2),Input.get_joy_axis(0,3)))

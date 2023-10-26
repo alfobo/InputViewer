@@ -385,4 +385,3 @@ offset_bottom = 567.0
 horizontal_alignment = 1
 
 [connection signal="triggerData" from="trigger" to="." method="_on_trigger_trigger_data"]
-[connection signal="analogData" from="analog" to="." method="_on_analog_analog_data"]

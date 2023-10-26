@@ -30,6 +30,5 @@ func _on_chroma_item_selected(index):
 func _on_inputs_toggled(button_pressed):
 	emit_signal("inputData",button_pressed)
 
-
 func _on_logs_toggled(button_pressed):
 	emit_signal("logs",button_pressed)
