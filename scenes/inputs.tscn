@@ -217,12 +217,6 @@ rotation = 1.5708
 scale = Vector2(0.88, 0.88)
 texture = ExtResource("16_2hk6s")
 
-[node name="notice" type="Label" parent="."]
-offset_left = 440.0
-offset_top = 40.0
-offset_right = 480.0
-offset_bottom = 63.0
-
 [node name="watches" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
