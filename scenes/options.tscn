@@ -1,39 +1,82 @@
-[gd_scene load_steps=7 format=3 uid="uid://cx37iqbakviwb"]
+[gd_scene load_steps=15 format=3 uid="uid://cx37iqbakviwb"]
 
 [ext_resource type="Script" path="res://script/options.gd" id="1_gsuww"]
 [ext_resource type="Texture2D" uid="uid://k6kmg2bvix6m" path="res://art/icon.svg" id="2_0vrh0"]
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_kya3t"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hy8os"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3sie"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vlya"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmc5u"]
 content_margin_left = 8.0
+content_margin_right = 8.0
 bg_color = Color(0.180392, 0.180392, 0.180392, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5jm1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quuhd"]
 content_margin_left = 8.0
-bg_color = Color(0.254902, 0.254902, 0.254902, 1)
+content_margin_right = 8.0
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rojw"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5llw2"]
 content_margin_left = 8.0
-bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+content_margin_right = 8.0
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tu1m4"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7drfk"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d83ln"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8yxso"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jx7l7"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0edyu"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_so04q"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
 
 [node name="options" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -656.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gsuww")
 
 [node name="Resolution" type="OptionButton" parent="."]
 layout_mode = 0
-offset_right = 128.0
+offset_right = 136.0
 offset_bottom = 31.0
-theme_override_styles/focus = SubResource("StyleBoxLine_kya3t")
-theme_override_styles/normal = SubResource("StyleBoxFlat_v3sie")
-theme_override_styles/hover = SubResource("StyleBoxFlat_m5jm1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5rojw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hy8os")
 item_count = 5
 selected = 0
 popup/item_0/text = "Resolution"
@@ -51,9 +94,10 @@ popup/item_4/id = 4
 
 [node name="Chroma" type="OptionButton" parent="."]
 layout_mode = 0
-offset_left = 144.0
-offset_right = 272.0
+offset_left = 152.0
+offset_right = 280.0
 offset_bottom = 31.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_6vlya")
 item_count = 4
 selected = 0
 popup/item_0/text = "Chroma"
@@ -96,35 +140,31 @@ offset_right = -176.0
 offset_bottom = 48.0
 start_index = 0
 
-[node name="RawInputs" type="ColorRect" parent="."]
+[node name="inputs" type="CheckButton" parent="."]
 layout_mode = 0
-offset_left = 288.0
-offset_right = 424.0
+offset_left = 296.0
+offset_right = 432.0
 offset_bottom = 31.0
-color = Color(0.180392, 0.180392, 0.180392, 1)
-metadata/_edit_group_ = true
-
-[node name="inputs" type="CheckButton" parent="RawInputs"]
-layout_mode = 0
-offset_right = 136.0
-offset_bottom = 31.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_hmc5u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_quuhd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5llw2")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_tu1m4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7drfk")
 text = "Input data"
 
-[node name="Logs" type="ColorRect" parent="."]
+[node name="logs" type="CheckButton" parent="."]
 layout_mode = 0
-offset_left = 440.0
-offset_right = 528.0
+offset_left = 456.0
+offset_right = 544.0
 offset_bottom = 31.0
-color = Color(0.180392, 0.180392, 0.180392, 1)
-metadata/_edit_group_ = true
-
-[node name="logs" type="CheckButton" parent="Logs"]
-layout_mode = 0
-offset_right = 88.0
-offset_bottom = 31.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_d83ln")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8yxso")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jx7l7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_0edyu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_so04q")
 text = "Logs"
 
 [connection signal="item_selected" from="Resolution" to="." method="_on_resolution_item_selected"]
 [connection signal="item_selected" from="Chroma" to="." method="_on_chroma_item_selected"]
-[connection signal="toggled" from="RawInputs/inputs" to="." method="_on_inputs_toggled"]
-[connection signal="toggled" from="Logs/logs" to="." method="_on_logs_toggled"]
+[connection signal="toggled" from="inputs" to="." method="_on_inputs_toggled"]
+[connection signal="toggled" from="logs" to="." method="_on_logs_toggled"]
