@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cx37iqbakviwb"]
+[gd_scene load_steps=14 format=3 uid="uid://cx37iqbakviwb"]
 
 [ext_resource type="Script" path="res://script/options.gd" id="1_gsuww"]
 [ext_resource type="Texture2D" uid="uid://k6kmg2bvix6m" path="res://art/icon.svg" id="2_0vrh0"]
@@ -7,9 +7,17 @@
 bg_color = Color(0.180392, 0.180392, 0.180392, 1)
 border_color = Color(0.8, 0.8, 0.8, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbkfr"]
+content_margin_left = 8.0
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vlya"]
 bg_color = Color(0.180392, 0.180392, 0.180392, 1)
 border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejoh4"]
+content_margin_left = 8.0
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmc5u"]
 content_margin_left = 8.0
@@ -36,6 +44,13 @@ content_margin_left = 8.0
 content_margin_right = 8.0
 bg_color = Color(0.180392, 0.180392, 0.180392, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ovv3"]
+bg_color = Color(0.952941, 0.952941, 0.952941, 1)
+
+[sub_resource type="Theme" id="Theme_x1dnl"]
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/styles/normal = SubResource("StyleBoxFlat_5ovv3")
+
 [node name="options" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -51,6 +66,7 @@ layout_mode = 0
 offset_right = 136.0
 offset_bottom = 31.0
 theme_override_styles/focus = SubResource("StyleBoxFlat_hy8os")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dbkfr")
 item_count = 5
 selected = 0
 popup/item_0/text = "Resolution"
@@ -72,6 +88,7 @@ offset_left = 152.0
 offset_right = 280.0
 offset_bottom = 31.0
 theme_override_styles/focus = SubResource("StyleBoxFlat_6vlya")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ejoh4")
 item_count = 4
 selected = 0
 popup/item_0/text = "Chroma"
@@ -126,6 +143,31 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_tu1m4")
 theme_override_styles/focus = SubResource("StyleBoxFlat_7drfk")
 text = "Input data"
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_right = 616.0
+offset_bottom = 32.0
+color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 4.0
+offset_right = 160.063
+offset_bottom = 27.0
+theme = SubResource("Theme_x1dnl")
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 93.0
+offset_bottom = 30.0
+text = "Frame cap:"
+vertical_alignment = 1
+
 [connection signal="item_selected" from="Resolution" to="." method="_on_resolution_item_selected"]
 [connection signal="item_selected" from="Chroma" to="." method="_on_chroma_item_selected"]
 [connection signal="toggled" from="inputs" to="." method="_on_inputs_toggled"]
+[connection signal="text_submitted" from="ColorRect/LineEdit" to="." method="_on_line_edit_text_submitted"]

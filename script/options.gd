@@ -7,7 +7,9 @@ var button_pressed
 
 func _ready():
 	button_pressed = false
-
+	#DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED) 
+	#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	
 func resolution(width, height):
 	get_viewport().size = Vector2(width,height)
 
@@ -33,3 +35,6 @@ func _on_chroma_item_selected(index):
 
 func _on_inputs_toggled(button_pressed):
 	emit_signal("inputData",button_pressed)
+
+func _on_line_edit_text_submitted(new_text):
+	Engine.max_fps = int(new_text)
