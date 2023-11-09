@@ -8,7 +8,7 @@ Developed as a way to better understand Godot. The Input Viewer is a simple tool
 - Button timings and analog position
 - Chroma key support
 
-Binaries can be found [here](https://alfobo.itch.io/inputviewer).
+Binaries can be found [here]().
 
 ---
 
