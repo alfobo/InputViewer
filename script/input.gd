@@ -25,10 +25,10 @@ func _ready():
 		child.text = "0.00000"
 	
 	if(OS.get_name() == "Linux"):
-		print(Input.get_joy_name(3))
+		print(str(Input.get_joy_name(3)))
 		device = 3
 	elif(OS.get_name() == "Windows"):
-		print(Input.get_joy_name(0))
+		print(str(Input.get_joy_name(0)))
 		device = 0
 		
 	bID = [
@@ -43,7 +43,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-#func _physics_process(delta):
 	controllerInputs(delta)
 	
 # Change sprite visibility state depending if a button is pressed or not
@@ -205,8 +204,7 @@ func _on_trigger_trigger_data(data):
 	if (data == Input.get_joy_axis(device,5)):
 		$watches/triggerRight.text = str(Input.get_joy_axis(device,5)).pad_decimals(5)
 
-func _on_analog_analog_data(data):
-	if (data == Vector2(Input.get_joy_axis(device,0),Input.get_joy_axis(device,1))):
-		$watches/analogLeft.text = str(Vector2(Input.get_joy_axis(device,0),Input.get_joy_axis(device,1)))
-	if (data == Vector2(Input.get_joy_axis(0,2),Input.get_joy_axis(device,3))):
-		$watches/analogRight.text = str(Vector2(Input.get_joy_axis(device,2),Input.get_joy_axis(device,3)))
+func _on_analog_analog_data_l(data):
+	$watches/analogLeft.text = str(data)
+func _on_analog_analog_data_r(data):
+	$watches/analogRight.text = str(data)

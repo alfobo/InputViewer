@@ -377,4 +377,5 @@ offset_right = 960.0
 offset_bottom = 567.0
 
 [connection signal="triggerData" from="trigger" to="." method="_on_trigger_trigger_data"]
-[connection signal="analogData" from="analog" to="." method="_on_analog_analog_data"]
+[connection signal="analogDataL" from="analog" to="." method="_on_analog_analog_data_l"]
+[connection signal="analogDataR" from="analog" to="." method="_on_analog_analog_data_r"]
