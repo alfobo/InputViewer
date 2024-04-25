@@ -4,6 +4,7 @@ var bID
 var b = []
 var time = []
 var timeActive = false
+var device
 
 func _ready():
 	$"face/face-pressed-up".visible = false
@@ -22,9 +23,14 @@ func _ready():
 	for child in $watches.get_children():
 		child.visible = false
 		child.text = "0.00000"
-		
-	print(Input.get_joy_name(0))
 	
+	if(OS.get_name() == "Linux"):
+		print(Input.get_joy_name(3))
+		device = 3
+	elif(OS.get_name() == "Windows"):
+		print(Input.get_joy_name(0))
+		device = 0
+		
 	bID = [
 		"A","B","X","Y","BACK","GUIDE","START",
 		"LBUT_STICK","RBUT_STICK","L_SHLD",
@@ -43,7 +49,7 @@ func _process(delta):
 # Change sprite visibility state depending if a button is pressed or not
 func controllerInputs(delta):
 	for i in range(b.size()):
-		if (Input.is_joy_button_pressed(0,b[i])):
+		if (Input.is_joy_button_pressed(device,b[i])):
 			match b[i]:
 				0:	# A
 					pressTime(delta,$watches/faceDown,0,true)
@@ -119,7 +125,7 @@ func controllerInputs(delta):
 					print(bID[i])
 				19:# Paddle 4
 					print(bID[i])
-		if(!Input.is_joy_button_pressed(0,b[i])):
+		if(!Input.is_joy_button_pressed(device,b[i])):
 			match b[i]:
 				0:	# A
 					pressTimeStop(0)
@@ -194,13 +200,13 @@ func _on_options_input_data(state):
 				child.visible = false
 
 func _on_trigger_trigger_data(data):
-	if(data == Input.get_joy_axis(0,4)):
-		$watches/triggerLeft.text = str(Input.get_joy_axis(0,4)).pad_decimals(5)
-	if (data == Input.get_joy_axis(0,5)):
-		$watches/triggerRight.text = str(Input.get_joy_axis(0,5)).pad_decimals(5)
+	if(data == Input.get_joy_axis(device,4)):
+		$watches/triggerLeft.text = str(Input.get_joy_axis(device,4)).pad_decimals(5)
+	if (data == Input.get_joy_axis(device,5)):
+		$watches/triggerRight.text = str(Input.get_joy_axis(device,5)).pad_decimals(5)
 
 func _on_analog_analog_data(data):
-	if (data == Vector2(Input.get_joy_axis(0,0),Input.get_joy_axis(0,1))):
-		$watches/analogLeft.text = str(Vector2(Input.get_joy_axis(0,0),Input.get_joy_axis(0,1)))
-	if (data == Vector2(Input.get_joy_axis(0,2),Input.get_joy_axis(0,3))):
-		$watches/analogRight.text = str(Vector2(Input.get_joy_axis(0,2),Input.get_joy_axis(0,3)))
+	if (data == Vector2(Input.get_joy_axis(device,0),Input.get_joy_axis(device,1))):
+		$watches/analogLeft.text = str(Vector2(Input.get_joy_axis(device,0),Input.get_joy_axis(device,1)))
+	if (data == Vector2(Input.get_joy_axis(0,2),Input.get_joy_axis(device,3))):
+		$watches/analogRight.text = str(Vector2(Input.get_joy_axis(device,2),Input.get_joy_axis(device,3)))

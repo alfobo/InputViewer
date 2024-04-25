@@ -58,10 +58,10 @@ func save():
 
 func loadData():
 	settings.load(path)
-	var res = settings.get_value("Setting","resolution")
-	var chroma = settings.get_value("Setting","chroma")
-	var toggleState = settings.get_value("Setting","inputsToggle")
-	var fps = settings.get_value("Setting","fpsCap")
+	var res = settings.get_value("Setting","resolution",0)
+	var chroma = settings.get_value("Setting","chroma",0)
+	var toggleState = settings.get_value("Setting","inputsToggle",false)
+	var fps = settings.get_value("Setting","fpsCap",60)
 	
 	_on_resolution_item_selected(res)
 	_on_chroma_item_selected(chroma)
